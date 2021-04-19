@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    public float jumpStrength = 300;
+    private float jumpStrength = 400;
     public bool grounded;
     private Rigidbody2D rb2;
 
