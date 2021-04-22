@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: 98e6cc5ca15b2514782145c5c17fed8c
+  - enabled: 1
+    path: Assets/Scenes/Death.unity
+    guid: cac66fc6b339b8b4ba996b2903e33384
   m_configObjects: {}
