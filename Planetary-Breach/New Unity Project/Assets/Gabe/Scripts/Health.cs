@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -15,15 +16,28 @@ public class Health : MonoBehaviour
     }
 
     // Update is called once per frame
-    //void Update()
+    void Update()
+    {
+        if(curHealth < 1)
+        {
+            //Debug.Log("Switch scene");
+            SceneManager.LoadScene("MainMenu");
+        }
     //For debug purposes.
     //{
     //    if (Input.GetKeyDown(KeyCode.Space))
     //    {
     //        DamagePlayer(10);
     //    }
-    //}
-
+    //
+}
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Hazard"))
+        {
+            DamagePlayer(10);
+        }
+    }
     public void DamagePlayer(int damage)
     {
         curHealth -= damage;
