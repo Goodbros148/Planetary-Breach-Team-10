@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public int curHealth = 0;
     public int maxHealth = 50;
     public HealthBar healthBar;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +18,7 @@ public class Health : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(curHealth < 1)
-        {
-            //Debug.Log("Switch scene");
-            SceneManager.LoadScene("MainMenu");
-        }
+    {        
     //For debug purposes.
     //{
     //    if (Input.GetKeyDown(KeyCode.Space))
@@ -33,14 +29,26 @@ public class Health : MonoBehaviour
 }
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Hazard"))
+        while (col.gameObject.CompareTag("Hazard"))
         {
             DamagePlayer(10);
+            if (curHealth < 1)
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
     }
+
     public void DamagePlayer(int damage)
     {
+
         curHealth -= damage;
         healthBar.SetHealth(curHealth);
+        //death
+        if (curHealth < 1)
+        {
+            //Debug.Log("Switch scene");
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
