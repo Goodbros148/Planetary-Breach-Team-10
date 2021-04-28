@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
 }
     void OnTriggerEnter2D(Collider2D col)
     {
-        while (col.gameObject.CompareTag("Hazard"))
+        if (col.gameObject.CompareTag("Hazard"))
         {
             DamagePlayer(10);
             if (curHealth < 1)
