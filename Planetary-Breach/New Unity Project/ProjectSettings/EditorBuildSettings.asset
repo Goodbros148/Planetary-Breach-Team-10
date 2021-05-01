@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Leo/Scenes/MainMenu.unity
     guid: 7a720ad9af0aac840b9845fefdb8c697
+  - enabled: 1
+    path: Assets/Mosiah/MosiahScenes/Level.unity
+    guid: 8784494af319838468f032b6bfea4941
   m_configObjects: {}
