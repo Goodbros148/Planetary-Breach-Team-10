@@ -15,7 +15,7 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(10, 0);
+        rb.velocity = new Vector2(20, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
