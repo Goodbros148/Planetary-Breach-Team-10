@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Planetary-Breach/New Unity Project/Assets/Gabe/TempAssets/Square.png.meta
 guid: 8728f72aac87db147bff4f36c8fe1c1c
+=======
+guid: d8e95f42e5db12649bf626bc326ccfcd
+>>>>>>> Shooting:Planetary-Breach/New Unity Project/Assets/Leo/Assets/Ground.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -83,7 +87,11 @@ TextureImporter:
       - {x: 2, y: 2}
       - {x: 2, y: -2}
     bones: []
+<<<<<<< HEAD:Planetary-Breach/New Unity Project/Assets/Gabe/TempAssets/Square.png.meta
     spriteID: 6e2b7211a8e5c924380255bf8ba38631
+=======
+    spriteID: 2ff699d77c9864d488fd19727e816524
+>>>>>>> Shooting:Planetary-Breach/New Unity Project/Assets/Leo/Assets/Ground.png.meta
     vertices: []
     indices: 
     edges: []
