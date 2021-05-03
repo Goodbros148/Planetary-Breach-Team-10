@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
+    public float speed = 20f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = transform.right * speed;
         Invoke("DestroySelf", 1);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        rb.velocity = new Vector2(20, 0);
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -9,6 +9,7 @@ public class SideMove : MonoBehaviour
     private SpriteRenderer sr;
     Vector3 characterScale;
     float characterScaleX;
+    bool facingLeft = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,12 +41,24 @@ public class SideMove : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") < 0)
         {
-            characterScale.x = -characterScaleX;
+            //characterScale.x = -characterScaleX;
+            facingLeft = true;
+        }
+        if (facingLeft == true)
+        {
+            transform.Rotate(0f, 180f, 0f);
         }
         if (Input.GetAxis("Horizontal") > 0)
         {
-            characterScale.x = characterScaleX;
+            //characterScale.x = characterScaleX;
+            facingLeft = false;
+        }
+        if (facingLeft == false)
+        {
+            transform.Rotate(0f, 0f, 0f);
         }
         transform.localScale = characterScale;
+
+
     }
 }
