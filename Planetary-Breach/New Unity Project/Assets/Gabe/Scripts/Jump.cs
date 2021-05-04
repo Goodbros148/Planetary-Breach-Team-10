@@ -23,6 +23,7 @@ public class Jump : MonoBehaviour
         }
     }
 
+    //detect if player is standing on ground. If not, they cannot jump
     private void OnTriggerStay2D(Collider2D collision)
     {
         grounded = true;

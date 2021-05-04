@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     public HealthBar healthBar;
     
 
-    // Start is called before the first frame update
+    // Start the game with full health
     void Start()
     {
         curHealth = maxHealth;
@@ -27,6 +27,7 @@ public class Health : MonoBehaviour
     //    }
     //
 }
+    //Damaging the player is controlled here by tags (as of right now)
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Hazard"))
@@ -39,6 +40,7 @@ public class Health : MonoBehaviour
         }
     }
 
+    //The damage script
     public void DamagePlayer(int damage)
     {
 
