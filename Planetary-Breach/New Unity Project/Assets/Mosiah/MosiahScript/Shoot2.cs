@@ -8,6 +8,8 @@ public class Shoot2 : MonoBehaviour
     private SideMove2 thePlayer;
     public bool playerInRange;
     public float playerRange;
+    public GameObject Bullet;
+    public Transform firePoint;
 
     public LayerMask playerLayer;
     // Start is called before the first frame update
@@ -23,9 +25,11 @@ public class Shoot2 : MonoBehaviour
         playerInRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer);
         if (playerInRange)
         {
-            GameObject Bullet = (GameObject)Instantiate(bulletRef);
-            Bullet.transform.position = new Vector3(transform.position.x + 1f, transform.position.y - 2f, 1);
-            //Bullet.transform.position = Vector3.MoveTowards(transform.position, thePlayer.transform.position, -1);
+            Shoot();
         }
+    }
+    void Shoot()
+    {
+        Instantiate(Bullet, firePoint.position, firePoint.rotation);
     }
 }
