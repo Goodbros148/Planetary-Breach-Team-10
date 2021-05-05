@@ -14,8 +14,6 @@ public class ShootingScript : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            /*GameObject Bullet = (GameObject)Instantiate(bulletRef);
-            Bullet.transform.position = new Vector3(transform.position.x + 0.6f, transform.position.y + 0.2f, -1);*/
             Shoot();
         }
 
