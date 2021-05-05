@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public float speed = 20f;
+   
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = transform.right * speed;
         Invoke("DestroySelf", 1);
     }
 
