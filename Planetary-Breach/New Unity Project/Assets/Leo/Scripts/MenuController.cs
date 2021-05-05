@@ -7,11 +7,11 @@ public class MenuController : MonoBehaviour
 {
     public void ButtonStart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     public void ButtonCredits()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
     public void ButtonQuit()
     {
@@ -19,6 +19,11 @@ public class MenuController : MonoBehaviour
     }
 
     public void ButtonMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Back()
     {
         SceneManager.LoadScene(0);
     }
