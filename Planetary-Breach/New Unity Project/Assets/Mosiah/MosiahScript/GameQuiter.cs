@@ -14,7 +14,7 @@ class GameQuiter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("q"))
+        if (Input.GetButtonDown("Q"))
         {
             Application.Quit();
         }
