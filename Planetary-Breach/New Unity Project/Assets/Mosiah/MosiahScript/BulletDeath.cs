@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BulletDeath : MonoBehaviour
 {
@@ -28,6 +29,6 @@ public class BulletDeath : MonoBehaviour
 
     private void KillSelf()
     {
-        Application.Quit();
+        SceneManager.LoadScene("GameOver");
     }
 }
