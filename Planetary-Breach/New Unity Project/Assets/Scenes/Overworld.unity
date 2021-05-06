@@ -594,6 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grounded: 0
+  animator: {fileID: 0}
 --- !u!61 &883249252
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -679,6 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0102f0f2ff9429047902bcf72bbb54db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 883249257}
 --- !u!114 &883249256
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class Jump : MonoBehaviour
     private float jumpStrength = 400;
     public bool grounded;
     private Rigidbody2D rb2;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,8 @@ public class Jump : MonoBehaviour
         }
     }
 
+    
+
     //detect if player is standing on ground. If not, they cannot jump
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -33,5 +36,6 @@ public class Jump : MonoBehaviour
     {
         grounded = false;
     }
+
 
 }
