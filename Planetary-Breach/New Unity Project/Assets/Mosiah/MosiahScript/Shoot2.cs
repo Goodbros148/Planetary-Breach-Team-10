@@ -8,15 +8,26 @@ public class Shoot2 : MonoBehaviour
     private SideMove2 thePlayer;
     public bool playerInRange;
     public float playerRange;
-    public GameObject Bullet;
-    public Transform firePoint;
+    public GameObject bullet;
+    public Transform Firepoint;
+    public SimpleXYTimeMove2 Player;
 
+
+    public float bulletSpeed = 20f;
+
+    float lookAngle;
     public LayerMask playerLayer;
     // Start is called before the first frame update
     void Start()
     {
         bulletRef = Resources.Load("Bullet");
         thePlayer = FindObjectOfType<SideMove2>();
+        
+
+        //lookAngle = Mathf.Atan2(Player.x, Player.y) * Mathf.Rad2Deg;
+        Player = FindObjectOfType<SimpleXYTimeMove2>();
+
+        Firepoint.rotation = Quaternion.Euler(0, 0, lookAngle);
     }
 
     // Update is called once per frame
@@ -30,6 +41,10 @@ public class Shoot2 : MonoBehaviour
     }
     void Shoot()
     {
-        Instantiate(Bullet, firePoint.position, firePoint.rotation);
+        GameObject bulletClone = Instantiate(bullet);
+        bulletClone.transform.position = Firepoint.position;
+        bulletClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
+
+        bulletClone.GetComponent<Rigidbody2D>().velocity = Firepoint.right * bulletSpeed;
     }
 }
