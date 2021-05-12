@@ -12,7 +12,6 @@ public class Shoot2 : MonoBehaviour
     public Transform Firepoint;
     public SimpleXYTimeMove2 Player;
 
-
     public float bulletSpeed = 20f;
 
     float lookAngle;
@@ -26,7 +25,7 @@ public class Shoot2 : MonoBehaviour
 
         //lookAngle = Mathf.Atan2(Player.x, Player.y) * Mathf.Rad2Deg;
         Player = FindObjectOfType<SimpleXYTimeMove2>();
-
+        lookAngle = Mathf.Atan2(-1, -1) * Mathf.Rad2Deg;
         Firepoint.rotation = Quaternion.Euler(0, 0, lookAngle);
     }
 
@@ -36,10 +35,19 @@ public class Shoot2 : MonoBehaviour
         playerInRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer);
         if (playerInRange)
         {
-            Shoot();
+            StartCoroutine(ExampleCoroutine());
+
+
         }
     }
-    void Shoot()
+    IEnumerator ExampleCoroutine()
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(3);
+        Shoot();
+        yield return new WaitForSeconds(3);
+    }
+void Shoot()
     {
         GameObject bulletClone = Instantiate(bullet);
         bulletClone.transform.position = Firepoint.position;
