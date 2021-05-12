@@ -7,13 +7,14 @@ public class NewShootingScript : MonoBehaviour
     public GameObject bullet;
     public Transform Firepoint;
     public float bulletSpeed = 20f;
+    public GameObject player;
 
     Vector2 lookDirection;
     float lookAngle;
 
     private void Update()
     {
-        lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - new Vector3(player.transform.position.x, player.transform.position.y);
         lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
 
         Firepoint.rotation = Quaternion.Euler(0, 0, lookAngle);
