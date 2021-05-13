@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    private float jumpStrength = 400;
+    private float jumpStrength = 800;
     public bool grounded;
     private Rigidbody2D rb2;
     public Animator animator;
@@ -18,23 +18,32 @@ public class Jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && grounded == true)
+        if (Input.GetButtonDown("Jump") && grounded == true) 
         {
-            rb2.AddForce(new Vector2(0, jumpStrength));
+            rb2.AddForce(new Vector2(0, jumpStrength));            
         }
+        if (grounded == true)
+        {
+            animator.SetBool("isGrounded", true);
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            animator.SetBool("isGrounded", false);
+        }
+        
     }
-
-    
 
     //detect if player is standing on ground. If not, they cannot jump
     private void OnTriggerStay2D(Collider2D collision)
     {
         grounded = true;
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         grounded = false;
+        
     }
 
 
