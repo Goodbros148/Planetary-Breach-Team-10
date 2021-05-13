@@ -13,7 +13,7 @@ public class SimpleXYTimeMove : MonoBehaviour
     void Update()
     {
         //basic movement script       
-        scaler = 4; //modify this number to adjust movement speed. Physics of player are controlled by the rigidbody 
+        scaler = 6; //modify this number to adjust movement speed. Physics of player are controlled by the rigidbody 
         float inX = Time.deltaTime * scaler * Input.GetAxis("Horizontal");        
         transform.position += new Vector3(inX, 0);
         Debug.Log(inX + ", ");
@@ -33,11 +33,11 @@ public class SimpleXYTimeMove : MonoBehaviour
         Vector3 characterScale = transform.localScale;
         if (Input.GetAxis("Horizontal")<0)
         {
-            characterScale.x = -3.123512f; 
+            characterScale.x = -5f; 
         }
         else if (Input.GetAxis("Horizontal") > 0)
         {
-            characterScale.x = 3.123512f; //this number is the same as the character sprite's scale number in unity. copy and paste that number here if changed.
+            characterScale.x = 5f; //this number is the same as the character sprite's scale number in unity. copy and paste that number here if changed.
         }
         transform.localScale = characterScale;
     }
