@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Leo/Scenes/YouWin.unity
     guid: 63e1e3cc582d4954a8f283bedd471ed1
+  - enabled: 1
+    path: Assets/Gabe/Level.unity
+    guid: c32e515c5b4227a4da2365bface7ec0a
   m_configObjects: {}
