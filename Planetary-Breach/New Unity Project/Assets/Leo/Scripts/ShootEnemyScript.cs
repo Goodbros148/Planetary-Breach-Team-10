@@ -5,7 +5,9 @@ using UnityEngine;
 public class ShootEnemyScript : MonoBehaviour
 {
 
-    private int health = 5;
+    private int health = 15;
+    public GameObject healthpick;
+    public Transform dropSpot;
 
     // Start is called before the first frame update
     void Start()
@@ -29,5 +31,7 @@ public class ShootEnemyScript : MonoBehaviour
     private void KillSelf()
     {
         Destroy(gameObject);
+        GameObject healthClone = Instantiate(healthpick);
+        healthClone.transform.position = dropSpot.position;
     }
 }

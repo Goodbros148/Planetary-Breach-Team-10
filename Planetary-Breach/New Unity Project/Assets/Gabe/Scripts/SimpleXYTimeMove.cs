@@ -16,7 +16,7 @@ public class SimpleXYTimeMove : MonoBehaviour
         scaler = 6; //modify this number to adjust movement speed. Physics of player are controlled by the rigidbody 
         float inX = Time.deltaTime * scaler * Input.GetAxis("Horizontal");        
         transform.position += new Vector3(inX, 0);
-        Debug.Log(inX + ", ");
+        //Debug.Log(inX + ", ");
 
         //walking animation
         if (Input.GetAxis("Horizontal") != 0)

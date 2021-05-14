@@ -19,7 +19,7 @@ public class SimpleXYTimeMove2 : MonoBehaviour
         scaler = 2;
         float inX = Time.deltaTime * scaler * Input.GetAxis("Horizontal");        
         transform.position += new Vector3(inX, 0);
-        Debug.Log(inX + ", ");     
+        //Debug.Log(inX + ", ");     
     }
 
 }

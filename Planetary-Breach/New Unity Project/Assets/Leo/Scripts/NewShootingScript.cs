@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NewShootingScript : MonoBehaviour
 {
-    public GameObject bullet;
+    public GameObject playerBullet;
     public Transform Firepoint;
     public float bulletSpeed = 20f;
     public GameObject player;
@@ -21,7 +21,7 @@ public class NewShootingScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject bulletClone = Instantiate(bullet);
+            GameObject bulletClone = Instantiate(playerBullet);
             bulletClone.transform.position = Firepoint.position;
             bulletClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
 
