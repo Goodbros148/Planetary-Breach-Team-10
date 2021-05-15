@@ -45,7 +45,7 @@ public class Health : MonoBehaviour
             StartCoroutine(BecomeTemporarilyInvincible());
             if (curHealth < 1)
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("GameOver");
             }
         }
             if (col.CompareTag("Bullet") && isNotInvincible)
@@ -55,7 +55,7 @@ public class Health : MonoBehaviour
                 StartCoroutine(BecomeTemporarilyInvincible());
                 if (curHealth < 1)
                 {
-                    SceneManager.LoadScene("MainMenu");
+                    SceneManager.LoadScene("GameOver");
                 }
             }
         if (col.gameObject.CompareTag("PlusHealth")) //anything tagged as "PlusHealth" will heal 10 damage to the player
@@ -85,7 +85,7 @@ public class Health : MonoBehaviour
         if (curHealth < 1)
         {
             //Debug.Log("Switch scene");
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
