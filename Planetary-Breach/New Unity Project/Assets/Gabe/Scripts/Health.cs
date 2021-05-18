@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
     private bool isNotInvincible = true;
     [SerializeField]
     private float invincibilityDurationSeconds;
+    [SerializeField]
+    private float invincibilityDurationSecondsHazard;
     public Color myColor;
     public Color myDamageColor;
     SpriteRenderer myRenderer;
@@ -42,7 +44,7 @@ public class Health : MonoBehaviour
         if (col.gameObject.CompareTag("Hazard")&& isNotInvincible) //anything tagged as "Hazard" will deal 10 damage to the player
         {
             DamagePlayer(10);
-            StartCoroutine(BecomeTemporarilyInvincible());
+            StartCoroutine(BecomeTemporarilyInvincibleHazard());
             if (curHealth < 1)
             {
                 SceneManager.LoadScene("GameOver");
@@ -69,10 +71,21 @@ public class Health : MonoBehaviour
 
     private IEnumerator BecomeTemporarilyInvincible() //Invunerability frames used for making player invulnerable to attacks.
     {
+
         Debug.Log("Player turned invincible!");
         isNotInvincible = false;
         myRenderer.material.color = myDamageColor;
         yield return new WaitForSeconds(invincibilityDurationSeconds);
+        myRenderer.material.color = myColor;
+        isNotInvincible = true;
+        Debug.Log("Player is no longer invincible!");
+    }
+    private IEnumerator BecomeTemporarilyInvincibleHazard()
+    {
+        Debug.Log("Player turned invincible!");
+        isNotInvincible = false;
+        myRenderer.material.color = myDamageColor;
+        yield return new WaitForSeconds(invincibilityDurationSecondsHazard);
         myRenderer.material.color = myColor;
         isNotInvincible = true;
         Debug.Log("Player is no longer invincible!");
