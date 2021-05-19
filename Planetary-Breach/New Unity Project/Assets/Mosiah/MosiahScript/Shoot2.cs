@@ -7,7 +7,7 @@ public class Shoot2 : MonoBehaviour
     Object bulletRef;
     private SideMove2 thePlayer;
     public bool playerInRange;
-    public float playerRange;
+    private float playerRange = 20;
     public GameObject bullet;
     public Transform Firepoint;
     public SimpleXYTimeMove2 Player;
