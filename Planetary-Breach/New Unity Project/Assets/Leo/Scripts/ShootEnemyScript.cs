@@ -26,7 +26,7 @@ public class ShootEnemyScript : MonoBehaviour
                 KillSelf();
             }
         }
-        if (collision.CompareTag("subBullet"))
+        if (collision.CompareTag("SubBullet"))
         {
             Destroy(collision.gameObject);
             health = health - 5;

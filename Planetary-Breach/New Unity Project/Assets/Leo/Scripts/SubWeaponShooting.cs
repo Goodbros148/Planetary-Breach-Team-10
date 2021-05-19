@@ -28,7 +28,7 @@ public class SubWeaponShooting : MonoBehaviour
 
         Debug.Log(allowFire);
 
-        if (Input.GetMouseButtonDown(0) && (allowFire == true))
+        if (Input.GetMouseButtonDown(1) && (allowFire == true))
         {
             StartCoroutine(Fire());
 
