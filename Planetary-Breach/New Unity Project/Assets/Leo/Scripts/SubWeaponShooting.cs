@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewShootingScript : MonoBehaviour
+public class SubWeaponShooting : MonoBehaviour
 {
-    public GameObject playerBullet;
+    public GameObject placeHolder;
     public Transform Firepoint;
-    public float bulletSpeed = 20f;
+    public float bulletSpeed = 10f;
     public GameObject player;
     public bool allowFire;
-    public float rateOfFire = 0.5f;
+    public float rateOfFire = 2f;
 
     Vector2 lookDirection;
     float lookAngle;
@@ -31,11 +31,11 @@ public class NewShootingScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && (allowFire == true))
         {
             StartCoroutine(Fire());
-            
+
         }
     }
 
-        IEnumerator Fire()
+    IEnumerator Fire()
     {
         allowFire = false;
 
@@ -48,7 +48,7 @@ public class NewShootingScript : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bulletClone = Instantiate(playerBullet);
+        GameObject bulletClone = Instantiate(placeHolder);
         bulletClone.transform.position = Firepoint.position;
         bulletClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
 

@@ -255,10 +255,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a979fecf8022d4c84f77cdf45994ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6182436020710959239, guid: f8927990b6ca4d741bab523d9c6fb2e3, type: 3}
+  playerBullet: {fileID: 6182436020710959239, guid: 24e976d75b194634da8d38e23c9b8c9b,
+    type: 3}
   Firepoint: {fileID: 185468718}
   bulletSpeed: 50
   player: {fileID: 59703838}
+  allowFire: 0
+  rateOfFire: 0.5
 --- !u!114 &59703844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +448,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d9c21b81f15a7418d295be690c0496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 15
+  healthpick: {fileID: 0}
+  dropSpot: {fileID: 0}
 --- !u!1 &1174270973
 GameObject:
   m_ObjectHideFlags: 0

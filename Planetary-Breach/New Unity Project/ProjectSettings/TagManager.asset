@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Bullet
   - PlayerBullet
+  - Enemy
+  - PlusHealth
+  - Ground
+  - Hazard
+  - SubBullet
   layers:
   - Default
   - TransparentFX
