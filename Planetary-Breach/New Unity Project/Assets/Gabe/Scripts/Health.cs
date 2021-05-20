@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public int curHealth = 0;
-    public int maxHealth = 64;
+    public int maxHealth = 100;
     public HealthBar healthBar;
     private bool isNotInvincible = true;
     [SerializeField]
@@ -124,7 +124,7 @@ public class Health : MonoBehaviour
             }
         if (col.gameObject.CompareTag("PlusHealth")) //anything tagged as "PlusHealth" will heal 10 damage to the player
         {
-            DamagePlayer(-3);
+            DamagePlayer(-5);
         }
     }
 
