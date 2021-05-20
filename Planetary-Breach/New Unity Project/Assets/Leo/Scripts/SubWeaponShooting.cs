@@ -11,16 +11,19 @@ public class SubWeaponShooting : MonoBehaviour
     public bool allowFire;
     public float rateOfFire = 2f;
 
+    public GameObject SubFireUI;
     Vector2 lookDirection;
     float lookAngle;
 
     private void Start()
     {
-        allowFire = true;
+        allowFire = false;
+        SubFireUI.SetActive(false);
     }
 
     private void Update()
     {
+        
         lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - new Vector3(player.transform.position.x, player.transform.position.y);
         lookAngle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
 
@@ -32,6 +35,14 @@ public class SubWeaponShooting : MonoBehaviour
         {
             StartCoroutine(Fire());
 
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("SubWeaponGet"))
+        {
+            allowFire = true;
+            SubFireUI.SetActive(true);
         }
     }
 

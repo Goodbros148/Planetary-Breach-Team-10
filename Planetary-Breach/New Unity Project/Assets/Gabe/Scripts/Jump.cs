@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    private float jumpStrength = 800;
+    private float jumpStrength = 400;
     public bool grounded;
+    public bool inAir;
     private Rigidbody2D rb2;
     public Animator animator;
 
@@ -20,7 +21,14 @@ public class Jump : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && grounded == true) 
         {
-            rb2.AddForce(new Vector2(0, jumpStrength));            
+            rb2.AddForce(new Vector2(0, jumpStrength));
+            inAir = true;
+            if (Input.GetButtonDown("Jump") && inAir == true)
+            {
+                rb2.AddForce(new Vector2(0, jumpStrength));
+                grounded = false;
+                inAir = false;
+            }
         }
         if (grounded == true)
         {
@@ -36,14 +44,44 @@ public class Jump : MonoBehaviour
     //detect if player is standing on ground. If not, they cannot jump
     private void OnTriggerStay2D(Collider2D collision)
     {
-        grounded = true;
+        if (collision.gameObject.CompareTag("Bullet") && inAir == true)
+        {
+            if (Input.GetButtonDown("Jump") && inAir == true)
+            {
+                grounded = false;
+                inAir = false;
+            }
+        }
+        else if (collision.gameObject.CompareTag("SubBullet") && inAir == true)
+        {
+            if (Input.GetButtonDown("Jump") && inAir == true)
+            {
+                grounded = false;
+                inAir = false;
+            }
+        }
+        else if (collision.gameObject.CompareTag("PlayerBullet") && inAir == true)
+        {
+            if (Input.GetButtonDown("Jump") && inAir == true)
+            {
+                grounded = false;
+                inAir = false;
+            }
+        }
+        else if (collision.gameObject.CompareTag("Ground") && inAir == false) { grounded = true; inAir = false; }
         
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        grounded = false;
+        if (Input.GetButtonDown("Jump"))
+        {
+            grounded = false;
+            inAir = false;
+        }
+
         
+
     }
 
 
