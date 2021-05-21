@@ -3,7 +3,11 @@ guid: 94d9c21b81f15a7418d295be690c0496
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthpick: {instanceID: 0}
+  - dropSpot: {instanceID: 0}
+  - DeathParticles: {fileID: 8040987446347429462, guid: f1955d1a5f17fe54e92f93fc0bb484fa,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

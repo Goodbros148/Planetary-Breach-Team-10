@@ -8,6 +8,8 @@ public class ShootEnemyScript : MonoBehaviour
     public int health = 15;
     public GameObject healthpick;
     public Transform dropSpot;
+    
+    public ParticleSystem DeathParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,12 @@ public class ShootEnemyScript : MonoBehaviour
     private void KillSelf()
     {
         Destroy(gameObject);
+        var obj = Instantiate(DeathParticles, transform.position, Quaternion.identity);
+        Destroy(obj, 3f);
         GameObject healthClone = Instantiate(healthpick);
         healthClone.transform.position = dropSpot.position;
     }
+   
+
+
 }

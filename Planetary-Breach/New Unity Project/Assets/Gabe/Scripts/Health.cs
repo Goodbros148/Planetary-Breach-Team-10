@@ -56,17 +56,23 @@ public class Health : MonoBehaviour
             curHealth = maxHealth;
         }
 
-        if (curHealth <= 10)
+        if (curHealth <= 20 && curHealth > 10)
         {
            speedCap = 30;
-            scaler = 9;
+            scaler = 10;
+            myRenderer.material.color = myBuffColor;
+        }
+        if (curHealth <= 10)
+        {
+            speedCap = 40;
+            scaler = 15;
             myRenderer.material.color = myBuffColor;
         }
         else { speedCap = 5; scaler = 6; }
-        if (curHealth <= 20 && curHealth > 10)
+        if (curHealth <= 30 && curHealth > 20)
         {
             speedCap = 15;
-            scaler = 7;
+            scaler = 8;
             myRenderer.material.color = myBuffSmallColor;
         }
         else if(curHealth > 10) { speedCap = 5; scaler = 6; }
