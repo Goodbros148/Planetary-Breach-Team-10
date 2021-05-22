@@ -59,13 +59,13 @@ public class Health : MonoBehaviour
         if (curHealth <= 20 && curHealth > 10)
         {
            speedCap = 30;
-            scaler = 10;
+            scaler = 9;
             myRenderer.material.color = myBuffColor;
         }
         if (curHealth <= 10)
         {
             speedCap = 40;
-            scaler = 15;
+            scaler = 11;
             myRenderer.material.color = myBuffColor;
         }
         else { speedCap = 5; scaler = 6; }
@@ -111,14 +111,14 @@ public class Health : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Hazard")&& isNotInvincible) //anything tagged as "Hazard" will deal 10 damage to the player
         {
-            DamagePlayer(8);
+            DamagePlayer(6);
             StartCoroutine(BecomeTemporarilyInvincibleHazard());
             if (curHealth < 1)
             {
                 SceneManager.LoadScene("GameOver");
             }
         }
-            if (col.CompareTag("Bullet") && isNotInvincible)
+        if (col.CompareTag("Bullet") && isNotInvincible)
             {
                 Destroy(col.gameObject);
                 DamagePlayer(4);
@@ -131,6 +131,12 @@ public class Health : MonoBehaviour
         if (col.gameObject.CompareTag("PlusHealth")) //anything tagged as "PlusHealth" will heal 10 damage to the player
         {
             DamagePlayer(-5);
+     
+        }
+
+        if (col.CompareTag("DeathBarrier"))
+        {
+            SceneManager.LoadScene("GameOver");
         }
     }
 

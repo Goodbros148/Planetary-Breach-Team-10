@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShootEnemyScript : MonoBehaviour
 {
 
-    public int health = 15;
+    private int health = 10;
     public GameObject healthpick;
     public Transform dropSpot;
     
@@ -31,7 +31,7 @@ public class ShootEnemyScript : MonoBehaviour
         if (collision.CompareTag("SubBullet"))
         {
             Destroy(collision.gameObject);
-            health = health - 5;
+            health = health - 4;
             if (health <= 0)
             {
                 KillSelf();

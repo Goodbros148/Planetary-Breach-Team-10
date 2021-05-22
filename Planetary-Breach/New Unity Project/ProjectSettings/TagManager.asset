@@ -12,6 +12,9 @@ TagManager:
   - Hazard
   - SubBullet
   - SubWeaponGet
+  - DeathBarrier
+  - CaveEnter
+  - CaveExit
   layers:
   - Default
   - TransparentFX
