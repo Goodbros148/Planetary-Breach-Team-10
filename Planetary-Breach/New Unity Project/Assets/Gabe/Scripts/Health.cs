@@ -65,7 +65,7 @@ public class Health : MonoBehaviour
         if (curHealth <= 10)
         {
             speedCap = 40;
-            scaler = 11;
+            scaler = 10;
             myRenderer.material.color = myBuffColor;
         }
         else { speedCap = 5; scaler = 6; }

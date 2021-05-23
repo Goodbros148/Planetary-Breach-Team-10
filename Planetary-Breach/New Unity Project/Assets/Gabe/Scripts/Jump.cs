@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class Jump : MonoBehaviour
 {
-    private float jumpStrength = 400;
+    private SideMove2 thePlayer;
+    public float jumpStrength = 400;
     public bool grounded;
     public bool inAir;
     private Rigidbody2D rb2;
     public Animator animator;
+    public bool boosted;
+    public ParticleSystem BoostParticles;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
+        thePlayer = FindObjectOfType<SideMove2>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetButtonDown("Jump") && grounded == true) 
         {
             rb2.AddForce(new Vector2(0, jumpStrength));
@@ -83,6 +88,20 @@ public class Jump : MonoBehaviour
         
 
     }
-
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("JumpBoost"))
+        {
+            StartCoroutine(JumpBoost());
+}
+    }
+    IEnumerator JumpBoost()
+    {
+        jumpStrength = 600;
+        var obj = Instantiate(BoostParticles, transform.position, Quaternion.identity);
+        obj.transform.position = Vector3.MoveTowards(transform.position, thePlayer.transform.position, 10);
+        yield return new WaitForSeconds(20);
+        Destroy(obj, 3f);
+        jumpStrength = 400;
+    }
 }

@@ -15,6 +15,7 @@ TagManager:
   - DeathBarrier
   - CaveEnter
   - CaveExit
+  - JumpBoost
   layers:
   - Default
   - TransparentFX

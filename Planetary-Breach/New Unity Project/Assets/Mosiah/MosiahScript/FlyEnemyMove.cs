@@ -15,6 +15,8 @@ public class FlyEnemyMove : MonoBehaviour
 
     public bool playerInRange;
 
+    public Vector3 offset;
+
 
 
 
@@ -28,11 +30,12 @@ public class FlyEnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         playerInRange = Physics2D.OverlapCircle(transform.position, playerRange, playerLayer);
 
         if (playerInRange)
         {
-            transform.position = Vector3.MoveTowards(transform.position, thePlayer.transform.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, thePlayer.transform.position + offset, moveSpeed * Time.deltaTime);
         }
     }
 
