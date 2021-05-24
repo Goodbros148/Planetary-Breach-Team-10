@@ -22,8 +22,8 @@ public class ShootEnemyScript : MonoBehaviour
         if(collision.CompareTag("PlayerBullet"))
         {
             Destroy(collision.gameObject);
-            health--;
-            if(health <= 0)
+            health = health - 1;
+            if (health <= 0)
             {
                 KillSelf();
             }
@@ -31,7 +31,7 @@ public class ShootEnemyScript : MonoBehaviour
         if (collision.CompareTag("SubBullet"))
         {
             Destroy(collision.gameObject);
-            health = health - 4;
+            health = health - 2;
             if (health <= 0)
             {
                 KillSelf();

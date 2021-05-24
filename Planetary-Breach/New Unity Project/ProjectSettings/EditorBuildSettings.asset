@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Leo/Scenes/YouWin.unity
     guid: 63e1e3cc582d4954a8f283bedd471ed1
+  - enabled: 1
+    path: Assets/Mosiah/MosiahScenes/Tutorial (1).unity
+    guid: 59ceefe422c83204cb962e15d993d0d4
   - enabled: 0
     path: Assets/Mosiah/MosiahScenes/Level.unity
     guid: 8784494af319838468f032b6bfea4941

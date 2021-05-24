@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
 {
     public void ButtonStart()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Tutorial (1)");
     }
     public void ButtonCredits()
     {
