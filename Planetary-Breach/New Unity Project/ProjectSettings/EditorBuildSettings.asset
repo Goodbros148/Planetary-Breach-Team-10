@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Mosiah/MosiahScenes/Level.unity
     guid: 8784494af319838468f032b6bfea4941
+  - enabled: 1
+    path: Assets/Gabe/cutscene.unity
+    guid: fe7fb4613261d3540af690fa625885c4
   m_configObjects: {}

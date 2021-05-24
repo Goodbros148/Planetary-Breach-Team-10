@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
 {
     public void ButtonStart()
     {
-        SceneManager.LoadScene("Tutorial (1)");
+        SceneManager.LoadScene("cutscene");
     }
     public void ButtonCredits()
     {

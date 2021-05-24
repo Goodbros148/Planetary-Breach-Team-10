@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameEndWin : MonoBehaviour
+public class GameStart : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,6 @@ public class GameEndWin : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene("YouWin");
+        SceneManager.LoadScene("Level");
     }
 }
