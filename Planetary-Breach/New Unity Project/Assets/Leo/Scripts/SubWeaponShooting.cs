@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SubWeaponShooting : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class SubWeaponShooting : MonoBehaviour
     public GameObject player;
     public bool allowFire;
     public float rateOfFire = 2f;
+    public int maxAmmo = 25;
+    public int curAmmo = 0;
+    public Text ammoAmount;
 
     public GameObject SubFireUI;
     Vector2 lookDirection;
@@ -19,6 +23,7 @@ public class SubWeaponShooting : MonoBehaviour
     {
         allowFire = false;
         SubFireUI.SetActive(false);
+        curAmmo = 5;
     }
 
     private void Update()
@@ -34,7 +39,19 @@ public class SubWeaponShooting : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && (allowFire == true))
         {
             StartCoroutine(Fire());
+        }
 
+        //Ammo UI Programming
+        ammoAmount.text = curAmmo.ToString();
+
+        //Prevents Ammo count from going above max. If no ammo, allowFire is set to False
+        if (curAmmo > maxAmmo)
+        {
+            curAmmo = maxAmmo;
+        }
+        if (curAmmo <= 0)
+        {
+            allowFire = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,6 +61,10 @@ public class SubWeaponShooting : MonoBehaviour
             allowFire = true;
             SubFireUI.SetActive(true);
         }
+        if (collision.gameObject.CompareTag("PlusAmmo"))
+        {
+            curAmmo += 2;
+        }
     }
 
     IEnumerator Fire()
@@ -51,6 +72,8 @@ public class SubWeaponShooting : MonoBehaviour
         allowFire = false;
 
         Shoot();
+
+        curAmmo--;
 
         yield return new WaitForSeconds(rateOfFire);
 
@@ -64,6 +87,7 @@ public class SubWeaponShooting : MonoBehaviour
         bulletClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
 
         bulletClone.GetComponent<Rigidbody2D>().velocity = Firepoint.right * bulletSpeed;
+
     }
 
 }
