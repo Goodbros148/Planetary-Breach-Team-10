@@ -21,6 +21,11 @@ public class Health : MonoBehaviour
     public float speedCap = 5;
     private Rigidbody2D rb2;
 
+    public int HazardDamage;
+    public int BulletDamage;
+    public int HazardDamageReset;
+    public int BulletDamageReset;
+
     private float scaler;
     private SpriteRenderer sr;
     public Animator animator;
@@ -56,36 +61,41 @@ public class Health : MonoBehaviour
             curHealth = maxHealth;
         }
 
-        if (curHealth <= 35 && curHealth > 10)
+        if (curHealth <= 35 && curHealth > 30)
         {
-           speedCap = 30;
-            scaler = 9;
-            myRenderer.material.color = myBuffColor;
+           speedCap = 12;
+            scaler = 7;
+            myRenderer.material.color = myBuffSmallColor;
             GameObject.FindGameObjectWithTag("Player").GetComponent<NewShootingScript>();
             NewShootingScript fireRate = GetComponent<NewShootingScript>();
             fireRate.rateOfFire = 0.25f;
         }
-        if (curHealth <= 25)
+        if (curHealth <= 25 && curHealth > 15)
         {
             NewShootingScript fireRate = GetComponent<NewShootingScript>();
-            fireRate.rateOfFire = 0.175f;
+            fireRate.rateOfFire = 0.16f;
+            BulletDamage = 2;
+            HazardDamage = 4;
         }
         if (curHealth <= 15)
         {
-            speedCap = 40;
+            speedCap = 15;
             scaler = 10;
             myRenderer.material.color = myBuffColor;
             NewShootingScript fireRate = GetComponent<NewShootingScript>();
             fireRate.rateOfFire = 0.09f;
+            BulletDamage = 1;
+            HazardDamage = 2;
         }
-        else { speedCap = 5; scaler = 6; }
-        if (curHealth <= 30 && curHealth > 20)
+        if (curHealth <= 30 && curHealth > 25)
         {
-            speedCap = 15;
+            speedCap = 13;
             scaler = 8;
             myRenderer.material.color = myBuffSmallColor;
+            BulletDamage = 3;
+            HazardDamage = 5;
         }
-        else if(curHealth > 10) { speedCap = 5; scaler = 6; }
+        else if(curHealth > 36) { speedCap = 5; scaler = 6; BulletDamage = BulletDamageReset; HazardDamage = HazardDamageReset; }
 
         //basic movement script       
         //modify this number to adjust movement speed. Physics of player are controlled by the rigidbody 
@@ -121,7 +131,7 @@ public class Health : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Hazard")&& isNotInvincible) //anything tagged as "Hazard" will deal 10 damage to the player
         {
-            DamagePlayer(6);
+            DamagePlayer(HazardDamage);
             StartCoroutine(BecomeTemporarilyInvincibleHazard());
             if (curHealth < 1)
             {
@@ -131,7 +141,7 @@ public class Health : MonoBehaviour
         if (col.CompareTag("Bullet") && isNotInvincible)
             {
                 Destroy(col.gameObject);
-                DamagePlayer(4);
+                DamagePlayer(BulletDamage);
                 StartCoroutine(BecomeTemporarilyInvincible());
                 if (curHealth < 1)
                 {

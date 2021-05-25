@@ -9,6 +9,10 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene("cutscene");
     }
+    public void ButtonRetry()
+    {
+        SceneManager.LoadScene("Level");
+    }
     public void ButtonCredits()
     {
         SceneManager.LoadScene("Credits");
