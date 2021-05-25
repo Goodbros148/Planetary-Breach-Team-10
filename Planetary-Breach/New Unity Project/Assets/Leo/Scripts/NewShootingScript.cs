@@ -26,7 +26,7 @@ public class NewShootingScript : MonoBehaviour
 
         Firepoint.rotation = Quaternion.Euler(0, 0, lookAngle);
 
-        Debug.Log(allowFire);
+        //Debug.Log(allowFire);
 
         if (Input.GetMouseButtonDown(0) && (allowFire == true))
         {

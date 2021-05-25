@@ -9,7 +9,7 @@ public class SideMove : MonoBehaviour
     private SpriteRenderer sr;
     Vector3 characterScale;
     float characterScaleX;
-    bool facingLeft = false;
+    public bool facingLeft = false;
 
     // Start is called before the first frame update
     void Start()
