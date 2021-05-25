@@ -9,7 +9,7 @@ public class FlyEnemyMove : MonoBehaviour
     public GameObject followPoint;
     public float moveSpeed;
 
-    private float playerRange = 20;
+    private float playerRange = 15;
 
     public LayerMask playerLayer;
 

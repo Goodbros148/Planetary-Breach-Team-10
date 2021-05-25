@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShootEnemyScript : MonoBehaviour
 {
 
-    private int health = 10;
+    private int health = 11;
     public GameObject healthpick;
     public Transform dropSpot;
     

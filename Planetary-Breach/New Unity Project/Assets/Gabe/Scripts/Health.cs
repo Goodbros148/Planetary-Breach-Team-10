@@ -56,7 +56,7 @@ public class Health : MonoBehaviour
             curHealth = maxHealth;
         }
 
-        if (curHealth <= 20 && curHealth > 10)
+        if (curHealth <= 30 && curHealth > 10)
         {
            speedCap = 30;
             scaler = 9;
@@ -130,7 +130,7 @@ public class Health : MonoBehaviour
             }
         if (col.gameObject.CompareTag("PlusHealth")) //anything tagged as "PlusHealth" will heal 10 damage to the player
         {
-            DamagePlayer(-5);
+            DamagePlayer(-2);
      
         }
 
