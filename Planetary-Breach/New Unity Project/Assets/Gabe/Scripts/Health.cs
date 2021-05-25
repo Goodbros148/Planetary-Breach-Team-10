@@ -56,17 +56,27 @@ public class Health : MonoBehaviour
             curHealth = maxHealth;
         }
 
-        if (curHealth <= 30 && curHealth > 10)
+        if (curHealth <= 35 && curHealth > 10)
         {
            speedCap = 30;
             scaler = 9;
             myRenderer.material.color = myBuffColor;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<NewShootingScript>();
+            NewShootingScript fireRate = GetComponent<NewShootingScript>();
+            fireRate.rateOfFire = 0.25f;
         }
-        if (curHealth <= 10)
+        if (curHealth <= 25)
+        {
+            NewShootingScript fireRate = GetComponent<NewShootingScript>();
+            fireRate.rateOfFire = 0.175f;
+        }
+        if (curHealth <= 15)
         {
             speedCap = 40;
             scaler = 10;
             myRenderer.material.color = myBuffColor;
+            NewShootingScript fireRate = GetComponent<NewShootingScript>();
+            fireRate.rateOfFire = 0.09f;
         }
         else { speedCap = 5; scaler = 6; }
         if (curHealth <= 30 && curHealth > 20)
