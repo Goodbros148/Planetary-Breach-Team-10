@@ -21,10 +21,10 @@ public class BulletScript : MonoBehaviour
             DestroySelf();
         }
 
-        if (collision.gameObject.CompareTag("Hazard"))
+        /*if (collision.gameObject.CompareTag("Hazard"))
         {
             DestroySelf();
-        }
+        }*/
     }
 
     private void DestroySelf()
