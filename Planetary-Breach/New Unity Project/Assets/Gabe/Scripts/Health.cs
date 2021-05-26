@@ -83,7 +83,7 @@ public class Health : MonoBehaviour
             scaler = 10;
             myRenderer.material.color = myBuffColor;
             NewShootingScript fireRate = GetComponent<NewShootingScript>();
-            fireRate.rateOfFire = 0.09f;
+            fireRate.rateOfFire = 0.12f;
             BulletDamage = 1;
             HazardDamage = 2;
         }
