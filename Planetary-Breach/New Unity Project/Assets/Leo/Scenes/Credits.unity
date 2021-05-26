@@ -397,7 +397,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Font Used: designer
 
-    by belina studio'
+    by belina studio
+
+    Sounds Provided by
+
+    Hunter Hasselbom'
 --- !u!222 &185985273
 CanvasRenderer:
   m_ObjectHideFlags: 0

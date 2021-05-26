@@ -8,6 +8,7 @@ public class FlyEnemyMove : MonoBehaviour
     public GameObject playerObject;
     public GameObject followPoint;
     public float moveSpeed;
+    public bool seePlayer = false;
 
     private float playerRange = 15;
 
@@ -36,6 +37,11 @@ public class FlyEnemyMove : MonoBehaviour
         if (playerInRange)
         {
             transform.position = Vector3.MoveTowards(transform.position, thePlayer.transform.position + offset, moveSpeed * Time.deltaTime);
+            if (seePlayer == false)
+            {
+                SoundManager.PlaySound("FlyingEnemy2");
+            }
+            seePlayer = true;
         }
     }
 
