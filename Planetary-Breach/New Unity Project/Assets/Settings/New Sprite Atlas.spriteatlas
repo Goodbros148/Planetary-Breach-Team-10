@@ -45,14 +45,16 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 23fb78621530c1d4fa2d44a3cafbdd9b, type: 3}
     - {fileID: 2800000, guid: ef7eeeefe63aa174280da8f228e559c2, type: 3}
     - {fileID: 2800000, guid: eb0ff9ce6b2c229488bd96b48fa45fcb, type: 3}
-    - {fileID: 21300000, guid: eb0ff9ce6b2c229488bd96b48fa45fcb, type: 3}
+    - {fileID: 2800000, guid: fdd1e98f95d64444b8175afdcb654dcd, type: 3}
     - {fileID: 2800000, guid: 5ea4bdaf7ec08f54588a6d2ba52b0f67, type: 3}
     - {fileID: 2800000, guid: 40c7eeb8b4c7ed54b91a7cc60e9e3e8f, type: 3}
     - {fileID: 2800000, guid: cad47c6b3de94a44e9e54b2e2ff9ea3e, type: 3}
-    - {fileID: 21300000, guid: cad47c6b3de94a44e9e54b2e2ff9ea3e, type: 3}
+    - {fileID: 2800000, guid: 192ad6182fd3e024bb1fc98da34908c3, type: 3}
     - {fileID: 2800000, guid: 4f1965792523ee748a4de68551302767, type: 3}
-    - {fileID: 21300000, guid: 4f1965792523ee748a4de68551302767, type: 3}
-    totalSpriteSurfaceArea: 477392
+    - {fileID: 2800000, guid: 9790ff95268126e4f8c90f51cf2a4e8d, type: 3}
+    - {fileID: 2800000, guid: e80798c945f24b545ae6e8521a76e95e, type: 3}
+    - {fileID: 2800000, guid: fd4effdd148c6894a8760f12c3e33716, type: 3}
+    totalSpriteSurfaceArea: 504695
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -116,12 +118,27 @@ SpriteAtlas:
   - {fileID: 21300008, guid: eac8b6a364778fa468f34ab7698445c7, type: 3}
   - {fileID: 21300018, guid: eac8b6a364778fa468f34ab7698445c7, type: 3}
   - {fileID: 21300016, guid: eac8b6a364778fa468f34ab7698445c7, type: 3}
+  - {fileID: 21300002, guid: 9790ff95268126e4f8c90f51cf2a4e8d, type: 3}
+  - {fileID: 21300000, guid: 9790ff95268126e4f8c90f51cf2a4e8d, type: 3}
+  - {fileID: 21300006, guid: 9790ff95268126e4f8c90f51cf2a4e8d, type: 3}
+  - {fileID: 21300004, guid: 9790ff95268126e4f8c90f51cf2a4e8d, type: 3}
+  - {fileID: 21300004, guid: 192ad6182fd3e024bb1fc98da34908c3, type: 3}
+  - {fileID: 21300006, guid: 192ad6182fd3e024bb1fc98da34908c3, type: 3}
+  - {fileID: 21300000, guid: 192ad6182fd3e024bb1fc98da34908c3, type: 3}
+  - {fileID: 21300002, guid: 192ad6182fd3e024bb1fc98da34908c3, type: 3}
+  - {fileID: 21300012, guid: 192ad6182fd3e024bb1fc98da34908c3, type: 3}
+  - {fileID: 21300014, guid: 192ad6182fd3e024bb1fc98da34908c3, type: 3}
+  - {fileID: 21300008, guid: 192ad6182fd3e024bb1fc98da34908c3, type: 3}
+  - {fileID: 21300010, guid: 192ad6182fd3e024bb1fc98da34908c3, type: 3}
   - {fileID: 21300004, guid: 40c7eeb8b4c7ed54b91a7cc60e9e3e8f, type: 3}
   - {fileID: 21300000, guid: 40c7eeb8b4c7ed54b91a7cc60e9e3e8f, type: 3}
   - {fileID: 21300002, guid: 40c7eeb8b4c7ed54b91a7cc60e9e3e8f, type: 3}
   - {fileID: 21300000, guid: 4f1965792523ee748a4de68551302767, type: 3}
+  - {fileID: 21300000, guid: e80798c945f24b545ae6e8521a76e95e, type: 3}
   - {fileID: 21300000, guid: cad47c6b3de94a44e9e54b2e2ff9ea3e, type: 3}
+  - {fileID: 21300000, guid: fd4effdd148c6894a8760f12c3e33716, type: 3}
   - {fileID: 21300000, guid: eb0ff9ce6b2c229488bd96b48fa45fcb, type: 3}
+  - {fileID: 21300000, guid: fdd1e98f95d64444b8175afdcb654dcd, type: 3}
   - {fileID: 21300002, guid: 5ea4bdaf7ec08f54588a6d2ba52b0f67, type: 3}
   - {fileID: 21300000, guid: 5ea4bdaf7ec08f54588a6d2ba52b0f67, type: 3}
   - {fileID: 21300006, guid: 5ea4bdaf7ec08f54588a6d2ba52b0f67, type: 3}
@@ -221,12 +238,27 @@ SpriteAtlas:
   - PB-Tiles2-2.0_4
   - PB-Tiles2-2.0_9
   - PB-Tiles2-2.0_8
+  - Bird_flying_sprite_1
+  - Bird_flying_sprite_0
+  - Bird_flying_sprite_3
+  - Bird_flying_sprite_2
+  - space_walk_sprite_2
+  - space_walk_sprite_3
+  - space_walk_sprite_0
+  - space_walk_sprite_1
+  - space_walk_sprite_6
+  - space_walk_sprite_7
+  - space_walk_sprite_4
+  - space_walk_sprite_5
   - Spider_guy_walk_cycle_hi_2
   - Spider_guy_walk_cycle_hi_0
   - Spider_guy_walk_cycle_hi_1
   - planetary_breach_background_retouch
+  - PlanetBreachGun
   - Mountain_background
+  - Spaceship2.0
   - Bullet
+  - HealthBarBorder
   - jumpsprite_1
   - jumpsprite_0
   - jumpsprite_3
