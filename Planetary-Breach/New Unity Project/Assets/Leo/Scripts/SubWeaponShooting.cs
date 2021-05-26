@@ -14,7 +14,7 @@ public class SubWeaponShooting : MonoBehaviour
     public int maxAmmo = 25;
     public int curAmmo = 0;
     public Text ammoAmount;
-    public bool noAmmo = false;
+    public bool hasGun = false;
 
     public GameObject SubFireUI;
     Vector2 lookDirection;
@@ -55,8 +55,11 @@ public class SubWeaponShooting : MonoBehaviour
         {
             curAmmo = 0;
         }
-        
-       
+        if (curAmmo == 0)
+        {
+            allowFire = false;
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -64,15 +67,15 @@ public class SubWeaponShooting : MonoBehaviour
         {
             allowFire = true;
             SubFireUI.SetActive(true);
+            hasGun = true;
         }
         if (collision.gameObject.CompareTag("PlusAmmo"))
         {
             curAmmo += 2;
         }
-        if (curAmmo == 0)
+        if (collision.gameObject.CompareTag("PlusAmmo") && hasGun == true)
         {
-            allowFire = false;
-            noAmmo = true;
+            allowFire = true;
         }
     }
     IEnumerator Fire()
