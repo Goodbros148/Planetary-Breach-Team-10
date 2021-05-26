@@ -56,7 +56,7 @@ void Shoot()
         GameObject bulletClone = Instantiate(bullet);
         bulletClone.transform.position = Firepoint.position;
         bulletClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
-
+        
         bulletClone.GetComponent<Rigidbody2D>().velocity = Firepoint.right * bulletSpeed;
     }
 }

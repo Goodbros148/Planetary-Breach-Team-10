@@ -14,10 +14,12 @@ public class SubWeaponShooting : MonoBehaviour
     public int maxAmmo = 25;
     public int curAmmo = 0;
     public Text ammoAmount;
+    public bool noAmmo = false;
 
     public GameObject SubFireUI;
     Vector2 lookDirection;
     float lookAngle;
+    
 
     private void Start()
     {
@@ -49,10 +51,12 @@ public class SubWeaponShooting : MonoBehaviour
         {
             curAmmo = maxAmmo;
         }
-        if (curAmmo <= 0)
+        if (curAmmo < 0)
         {
-            allowFire = false;
+            curAmmo = 0;
         }
+        
+       
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -65,8 +69,12 @@ public class SubWeaponShooting : MonoBehaviour
         {
             curAmmo += 2;
         }
+        if (curAmmo == 0)
+        {
+            allowFire = false;
+            noAmmo = true;
+        }
     }
-
     IEnumerator Fire()
     {
         allowFire = false;
@@ -74,10 +82,11 @@ public class SubWeaponShooting : MonoBehaviour
         Shoot();
 
         curAmmo--;
-
+    
         yield return new WaitForSeconds(rateOfFire);
 
         allowFire = true;
+
     }
 
     private void Shoot()
@@ -85,7 +94,7 @@ public class SubWeaponShooting : MonoBehaviour
         GameObject bulletClone = Instantiate(placeHolder);
         bulletClone.transform.position = Firepoint.position;
         bulletClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
-
+        SoundManager.PlaySound("Laser");
         bulletClone.GetComponent<Rigidbody2D>().velocity = Firepoint.right * bulletSpeed;
 
     }

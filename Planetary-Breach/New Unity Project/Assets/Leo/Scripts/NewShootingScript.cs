@@ -51,7 +51,7 @@ public class NewShootingScript : MonoBehaviour
         GameObject bulletClone = Instantiate(playerBullet);
         bulletClone.transform.position = Firepoint.position;
         bulletClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
-
+        SoundManager.PlaySound("Gun");
         bulletClone.GetComponent<Rigidbody2D>().velocity = Firepoint.right * bulletSpeed;
     }
 
