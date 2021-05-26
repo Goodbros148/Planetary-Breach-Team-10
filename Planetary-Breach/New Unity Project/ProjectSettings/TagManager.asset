@@ -17,6 +17,7 @@ TagManager:
   - CaveExit
   - JumpBoost
   - PlusAmmo
+  - FirePoint
   layers:
   - Default
   - TransparentFX
