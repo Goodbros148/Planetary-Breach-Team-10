@@ -14,9 +14,14 @@ public class BulletScript : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Ground"))
+        {
+            DestroySelf();
+        }
+
+        if (collision.gameObject.CompareTag("Hazard"))
         {
             DestroySelf();
         }
