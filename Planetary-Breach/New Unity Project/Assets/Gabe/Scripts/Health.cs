@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     SpriteRenderer myRenderer;
     public float speedCap = 5;
     private Rigidbody2D rb2;
+    public bool facingLeft;
 
     public int HazardDamage;
     public int BulletDamage;
@@ -119,10 +120,13 @@ public class Health : MonoBehaviour
         if (Input.GetAxis("Horizontal") < 0)
         {
             characterScale.x = -5f;
+            facingLeft = true;
+            
         }
         else if (Input.GetAxis("Horizontal") > 0)
         {
             characterScale.x = 5f; //this number is the same as the character sprite's scale number in unity. copy and paste that number here if changed.
+            facingLeft = false;
         }
         transform.localScale = characterScale;
     }
