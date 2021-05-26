@@ -13,6 +13,10 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene("Level");
     }
+    public void ButtonTutorial()
+    {
+        SceneManager.LoadScene("Tutorial (1)");
+    }
     public void ButtonCredits()
     {
         SceneManager.LoadScene("Credits");
